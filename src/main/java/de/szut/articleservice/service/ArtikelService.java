@@ -20,18 +20,20 @@ public class ArtikelService {
     }
 
     public Artikel update(Artikel artikel) {
-        return null;
+        artikelDao.update(artikel);
+        return artikelDao.findbyId(artikel.getId());
     }
 
     public void delete(long id){
-
+        artikelDao.delete(id);
     }
 
     public Artikel read(long id) {
-        return null;
+        artikelDao.findbyId(id);
+        return artikelDao.findbyId(id) ;
     }
 
     public List<Artikel> readAll() {
-        return null;
+        return artikelDao.findAll() ;
     }
 }
