@@ -29,4 +29,15 @@ public class ArtikelController {
         Artikel artikel = artikelService.add(request);
         return new ResponseEntity<>(artikel, HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<?> updateArtikel(@RequestBody Artikel request) {
+        artikelService.update(request);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Artikel> deleteArtikel(@PathVariable long id) {
+        artikelService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
